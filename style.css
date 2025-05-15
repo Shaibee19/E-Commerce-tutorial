@@ -435,4 +435,12 @@ footer {
     .highlight {
         width: 100%;
     }
+
+    .highlight__wrapper {
+        flex-direction: column;
+    }
+    
+    .highlight:not(:last-child) {
+        margin-bottom: 24px;
+    }
 }
