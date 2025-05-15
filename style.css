@@ -1,10 +1,17 @@
+/* GENERIC */
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 nav {
@@ -12,12 +19,85 @@ nav {
     display: flex;
 }
 
+p {
+    line-height: 1.5;
+}
+
 img {
     width: 100%;
     height: 100%;
     max-height: 50vh;
-    padding: 30px;
 }
+
+.logo {
+    width: 160px;
+    padding: 8px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.orange {
+    color: rgba(250, 205, 95);
+}
+
+.container {
+    padding: 56px;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.h1 {
+    font-size: 56px;
+    color: rgba(250, 205, 95);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+h2.section__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.btn {
+    background-color: rgba(250, 205, 95);
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    border: none;
+}
+
+#landing {
+    background-color: rgba(115, 66, 214, 0.1)
+}
+
+/* NAVIGATION */
 
 .nav__container {
     width: 100%;
@@ -27,22 +107,6 @@ img {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-}
-
-.orange {
-    color: rgba(250, 205, 95);
-}
-
-.logo {
-    width: 160px;
-}
-
-ul {
-    display: flex;
-}
-
-li {
-    list-style-type: none;
 }
 
 .nav__link {
@@ -67,9 +131,7 @@ li {
     text-decoration: none;
 }
 
-#landing {
-    background-color: rgba(115, 66, 214, 0.1)
-}
+/* HEADER */
 
 header {
     height: calc(100vh - 80px);
@@ -92,51 +154,43 @@ header {
     align-items: center;
 }
 
-.h1 {
-    font-size: 56px;
-    color: rgba(250, 205, 95);
-    margin-bottom: 24px;
-    text-align: center;
-}
-
-.h2 {
-    font-size: 32px;
-    margin-bottom: 32px;
-    text-align: center;
-}
-
-button {
-    cursor: pointer;
-}
-
-button:active {
-    transform: translateY(1px);
-}
-
-.btn {
-    background-color: rgba(250, 205, 95);
-    color: white;
-    padding: 12px 24px;
-    font-size: 20px;
-    border-radius: 4px;
-    border: none;
-}
-
 .header__img--wrapper {
-    padding: 24px;
+    padding: 20px;
+    z-index: 2;
 }
 
-.container {
-    padding: 56px;
-}
-
-.row {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.header__img {
+    padding: 30px;
 }
 
 /* HIGHLIGHTS */
+
+#highlights {
+    position: relative;
+}
+
+#highlights:before,
+#highlights:after {
+    background: url(assets/wave.svg);
+    content: "";
+    position: absolute;
+    width: 101vw;
+    height: 12vw;
+    left: 0;
+    z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#highlights:before {
+    top: 1px;
+    transform: translateY(-100%);
+}
+
+#highlights:after {
+    bottom: 1px;
+    transform: translateY(100%) rotate(180deg);
+}
 
 .highlight__wrapper {
     display: flex;
@@ -153,6 +207,7 @@ button:active {
 
 .highlight__para {
     text-align: center;
+    max-width: 280px;
 }
 
 .highlight__img {
@@ -173,4 +228,58 @@ button:active {
     margin-bottom: 16px;
 }
 
-/*adding for git hub */
+/* FEATURES */
+
+#features {
+    padding-top: 8vw;
+    background-color: rgba(115, 66, 214, 0.1);
+}
+
+/* BOOKS */
+
+.books {
+    display: flex;
+}
+
+.book {
+    width: 25%;
+    padding: 24px;
+}
+
+.book__img--wrapper {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.book__img {
+    max-height: 380px;
+    transition: all 300ms ease;
+    cursor: no-drop;
+}
+
+.book:hover .book__img {
+    transform: scale(1.03);
+}
+
+.book__title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.book__title:hover {
+    text-decoration: underline;
+    cursor: not-allowed;
+}
+
+.book__ratings {
+    margin-bottom: 8px;
+    color: #fabf2a;
+}
+
+.book__price--normal {
+    text-decoration: line-through;
+    padding-right: 6px;
+    color: #bfbfbf;
+}
